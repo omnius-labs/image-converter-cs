@@ -17,6 +17,8 @@
     <DisableImplicitNuGetFallbackFolder>true</DisableImplicitNuGetFallbackFolder>
     <NuGetLockFilePath>$(MSBuildThisFileDirectory)\lock\$(RuntimeIdentifier)\$(MSBuildProjectName).json</NuGetLockFilePath>
     <RestoreLockedMode Condition=" '$(ContinuousIntegrationBuild)' == 'true' ">true</RestoreLockedMode>
+    <DebugType>none</DebugType>
+    <PublishDocumentationFiles>false</PublishDocumentationFiles>
   </PropertyGroup>
 
   <PropertyGroup>
