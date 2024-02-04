@@ -1,0 +1,7 @@
+{
+    "dotnet.defaultSolution": "image-converter-cs.sln",
+    "cSpell.words": [
+        "Magick"
+    ],
+    "rust-analyzer.enable" : false,
+}
