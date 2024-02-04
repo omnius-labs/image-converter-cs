@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <PackageReference Include="Magick.NET-Q16-AnyCPU" />
-    <PackageReference Include="CommandLineParser" />
     <PackageReference Include="GitInfo">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

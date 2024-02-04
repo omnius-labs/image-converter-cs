@@ -1,17 +1,7 @@
 using System.Globalization;
-using CommandLine;
 using ImageMagick;
 
 namespace ImageConverter;
-
-class Options
-{
-    [Option('i', "in", Required = true)]
-    public string Input { get; set; } = "";
-
-    [Option('o', "out", Required = true)]
-    public string Output { get; set; } = "";
-}
 
 public static class Program
 {
@@ -19,19 +9,14 @@ public static class Program
     {
         try
         {
-            var parseResult = Parser.Default.ParseArguments<Options>(args);
-            if (parseResult.Tag == ParserResultType.NotParsed) throw new Exception("Invalid arguments");
+            var input = args[0];
+            var output = args[1];
 
-            if (parseResult is Parsed<Options> parsed)
-            {
-                var option = parsed.Value;
+            var m = new MagickImage(input, GetMagickFormat(input));
+            m.Write(output, GetMagickFormat(output));
 
-                var m = new MagickImage(option.Input, GetMagickFormat(option.Input));
-                m.Write(option.Output, GetMagickFormat(option.Output));
-
-                Console.WriteLine($"Converted {option.Input} to {option.Output}");
-                return 0;
-            }
+            Console.WriteLine($"Converted {input} to {output}");
+            return 0;
         }
         catch (Exception e)
         {
