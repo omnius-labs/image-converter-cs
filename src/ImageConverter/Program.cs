@@ -20,7 +20,7 @@ public static class Program
         }
         catch (Exception e)
         {
-            Console.WriteLine($"Error: {e.Message}");
+            Console.Error.WriteLine($"Error: {e.Message}");
         }
 
         return -1;
