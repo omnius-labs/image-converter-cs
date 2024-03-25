@@ -4,32 +4,32 @@
     "net8.0": {
       "GitInfo": {
         "type": "Direct",
-        "requested": "[3.3.3, )",
-        "resolved": "3.3.3",
-        "contentHash": "l7m4M/figjWz4B3eIL2Qy3UJiP2vvTOTeavlCT/GGH0khg0uxLanh/cwTZ27AZNhim56q1Mk0nbyRXtLqF4vmg==",
+        "requested": "[3.3.4, )",
+        "resolved": "3.3.4",
+        "contentHash": "uaK+WXIrHCkjJudwMfgVkI8tTNqjcB19bHpSBe4C5pOS4cx9JsPkCcaafN2vY2snkRiCQZCpt56yLslZOyvT2g==",
         "dependencies": {
           "ThisAssembly.Constants": "1.4.1"
         }
       },
       "Magick.NET-Q16-AnyCPU": {
         "type": "Direct",
-        "requested": "[13.5.0, )",
-        "resolved": "13.5.0",
-        "contentHash": "Kl3uDaaQkK9LVM9CUexnerlTOGFxA0CQHDU9be960W2VZVD45KtE5Yvtq3Mg0rUq7LlwXGCNr1FxEw/hhS2D/Q==",
+        "requested": "[13.6.0, )",
+        "resolved": "13.6.0",
+        "contentHash": "yuRR9pMdf6DoQ0aa9u/CAANeaeMW4PxzCw4EMSm349/VLVa3bLv70hm2w6kQXpTpf+IPf2Th1+5AbcNA12sHrw==",
         "dependencies": {
-          "Magick.NET.Core": "13.5.0"
+          "Magick.NET.Core": "13.6.0"
         }
       },
       "Microsoft.NET.ILLink.Tasks": {
         "type": "Direct",
-        "requested": "[8.0.2, )",
-        "resolved": "8.0.2",
-        "contentHash": "hKTrehpfVzOhAz0mreaTAZgbz0DrMEbWq4n3hAo8Ks6WdxdqQhNPvzOqn9VygKuWf1bmxPdraqzTaXriO/sn0A=="
+        "requested": "[8.0.3, )",
+        "resolved": "8.0.3",
+        "contentHash": "0kwNg0LBIvVTx9A2mo9Mnw4wLGtaeQgjSz5P13bOOwdWPPLe9HzI+XTkwiMhS7iQCM6X4LAbFR76xScaMw0MrA=="
       },
       "Magick.NET.Core": {
         "type": "Transitive",
-        "resolved": "13.5.0",
-        "contentHash": "/jKqfhbLvaVqxsV+DkOA5TjfrbO/Q3LdN3OL/xuewdC2EVBN4pTnAekAetn3CsbHOolfvc1xQLxY0MUN3nfwsg=="
+        "resolved": "13.6.0",
+        "contentHash": "VHW7fxIM/5z0m7pm6XXkAqTTCg6DlvVyn6MS/DhJ1bwY9v8W27AdhYDWOLns2P9zkD0WR72YAXPlcVbbIBVW6A=="
       },
       "Microsoft.CSharp": {
         "type": "Transitive",
@@ -54,11 +54,11 @@
     "net8.0/win-x64": {
       "Magick.NET-Q16-AnyCPU": {
         "type": "Direct",
-        "requested": "[13.5.0, )",
-        "resolved": "13.5.0",
-        "contentHash": "Kl3uDaaQkK9LVM9CUexnerlTOGFxA0CQHDU9be960W2VZVD45KtE5Yvtq3Mg0rUq7LlwXGCNr1FxEw/hhS2D/Q==",
+        "requested": "[13.6.0, )",
+        "resolved": "13.6.0",
+        "contentHash": "yuRR9pMdf6DoQ0aa9u/CAANeaeMW4PxzCw4EMSm349/VLVa3bLv70hm2w6kQXpTpf+IPf2Th1+5AbcNA12sHrw==",
         "dependencies": {
-          "Magick.NET.Core": "13.5.0"
+          "Magick.NET.Core": "13.6.0"
         }
       }
     }
