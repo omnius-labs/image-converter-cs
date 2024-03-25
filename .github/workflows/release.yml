@@ -34,7 +34,7 @@ jobs:
         run: |
           cd ./pub/linux-x64 && zip -r ../../image-converter-linux-x64-${{ steps.variables.outputs.release_version }}.zip ./*
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             image-converter-linux-x64-${{ steps.variables.outputs.release_version }}.zip
@@ -71,7 +71,7 @@ jobs:
           files: ./pub/win-x64
           dest: image-converter-win-x64-${{ steps.variables.outputs.release_version }}.zip
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           files: |
             image-converter-win-x64-${{ steps.variables.outputs.release_version }}.zip
