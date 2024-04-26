@@ -3,7 +3,7 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="13.6.0" />
+    <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="13.7.0" />
     <PackageVersion Include="GitInfo" Version="3.3.4" />
   </ItemGroup>
 </Project>
