@@ -1,1 +1,1 @@
-# ImageConverter
+# ImageConverter - using ImageMagick
