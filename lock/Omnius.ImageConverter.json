@@ -4,26 +4,26 @@
     "net8.0": {
       "GitInfo": {
         "type": "Direct",
-        "requested": "[3.3.4, )",
-        "resolved": "3.3.4",
-        "contentHash": "uaK+WXIrHCkjJudwMfgVkI8tTNqjcB19bHpSBe4C5pOS4cx9JsPkCcaafN2vY2snkRiCQZCpt56yLslZOyvT2g==",
+        "requested": "[3.5.0, )",
+        "resolved": "3.5.0",
+        "contentHash": "w7pFvv7PutCdK126BSq9O+wXfiyXQ68c2BeZnd9AHAbkV+IlTCF47LCZHNCqNchWMEv+GBbWGHCcGzZT411tIw==",
         "dependencies": {
-          "ThisAssembly.Constants": "1.4.1"
+          "ThisAssembly.Constants": "2.0.6"
         }
       },
       "Magick.NET-Q16-AnyCPU": {
         "type": "Direct",
-        "requested": "[13.6.0, )",
-        "resolved": "13.6.0",
-        "contentHash": "yuRR9pMdf6DoQ0aa9u/CAANeaeMW4PxzCw4EMSm349/VLVa3bLv70hm2w6kQXpTpf+IPf2Th1+5AbcNA12sHrw==",
+        "requested": "[14.2.0, )",
+        "resolved": "14.2.0",
+        "contentHash": "dlC3F/jpJ7SoUYCPrNBny0NnBBqj6M0jstEDHmyh83zZHH9vSdOcRk3f/3E7Qdd4vRD4DAPfR+d6e6chNyRjiA==",
         "dependencies": {
-          "Magick.NET.Core": "13.6.0"
+          "Magick.NET.Core": "14.2.0"
         }
       },
       "Magick.NET.Core": {
         "type": "Transitive",
-        "resolved": "13.6.0",
-        "contentHash": "VHW7fxIM/5z0m7pm6XXkAqTTCg6DlvVyn6MS/DhJ1bwY9v8W27AdhYDWOLns2P9zkD0WR72YAXPlcVbbIBVW6A=="
+        "resolved": "14.2.0",
+        "contentHash": "1F0vtPJwmoVg9tvi59VEy6KdmpUXbzKYJOH+TL37DT6kXfqj4iFtOMqD7CXC3G6z2zMgFeF5LX9SSApn8Jhhqg=="
       },
       "Microsoft.CSharp": {
         "type": "Transitive",
@@ -37,8 +37,8 @@
       },
       "ThisAssembly.Constants": {
         "type": "Transitive",
-        "resolved": "1.4.1",
-        "contentHash": "sV0CDYlC6YSIkYbdwd4+jRinLb888Dac71pmNhF2Ll6UXY1J+1oVt3EfmX6euXEKz2RLdfV+4GyZctfEA0NSqA==",
+        "resolved": "2.0.6",
+        "contentHash": "XF1RWxkEx+xvSRZOpkLF0rrclMsjKYkO+j7UoCk+ebSzKcxoIye7Na4HvkmIJogNoB+vZqSz7df5McxgzZHtbg==",
         "dependencies": {
           "Microsoft.CSharp": "4.7.0",
           "System.Threading.Tasks.Extensions": "4.5.4"

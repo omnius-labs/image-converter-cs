@@ -1,5 +1,5 @@
-using System.Globalization;
-using ImageMagick;
+using System.Text;
+using ImageConverter.Internal;
 
 namespace ImageConverter;
 
@@ -9,15 +9,19 @@ public static class Program
     {
         try
         {
-            InitializeImageMagick();
+            var line = Console.ReadLine();
+            if (line is null) throw new Exception("stdin is null");
 
-            var input = args[0];
-            var output = args[1];
+            var text = Base64StringToUtf8String(line);
+            if (text is null) throw new Exception("failed to base64 decoding");
 
-            var m = new MagickImage(input, MagickFormat.Unknown);
-            m.Write(output, GetMagickFormat(output));
+            var option = ConverterOption.FromJson(text);
+            if (option is null) throw new Exception("failed to json deserializing");
 
-            Console.WriteLine($"Converted {input} to {output}");
+            Converter.Run(option);
+
+            Console.WriteLine($"Converted \"{option.Input.FilePath}\" to \"{option.Output.FilePath}\"");
+
             return 0;
         }
         catch (Exception e)
@@ -28,34 +32,19 @@ public static class Program
         return -1;
     }
 
-    private static void InitializeImageMagick()
+    public static string Base64StringToUtf8String(string text)
     {
-        var configFiles = ImageMagick.Configuration.ConfigurationFiles.Default;
-        configFiles.Policy.Data = @"
-<policymap>
-  <policy domain=""delegate"" rights=""none"" pattern=""*"" />
-  <policy domain=""filter"" rights=""none"" pattern=""*"" />
-  <policy domain=""coder"" rights=""none"" pattern=""*"" />
-  <policy domain=""coder"" rights=""read|write"" pattern=""{GIF,JPEG,PNG,WEBP,BMP,HEIF,HEIC,AVIF,SVG}"" />
-</policymap>";
-        MagickNET.Initialize(configFiles);
-    }
+        var base64 = text
+            .Replace("-", "+", StringComparison.InvariantCulture)
+            .Replace("_", "/", StringComparison.InvariantCulture);
+        var paddingNeeded = 4 - base64.Length % 4;
 
-    static MagickFormat GetMagickFormat(string path)
-    {
-        var ext = Path.GetExtension(path).ToLower(CultureInfo.InvariantCulture);
-        return ext switch
+        if (paddingNeeded < 4)
         {
-            ".gif" => MagickFormat.Gif,
-            ".jpg" => MagickFormat.Jpg,
-            ".png" => MagickFormat.Png,
-            ".webp" => MagickFormat.WebP,
-            ".bmp" => MagickFormat.Bmp,
-            ".heif" => MagickFormat.Heif,
-            ".heic" => MagickFormat.Heic,
-            ".avif" => MagickFormat.Avif,
-            ".svg" => MagickFormat.Svg,
-            _ => throw new Exception("Invalid format")
-        };
+            base64 += new string('=', paddingNeeded);
+        }
+
+        var utf8 = new UTF8Encoding(false);
+        return utf8.GetString(Convert.FromBase64String(base64));
     }
 }
