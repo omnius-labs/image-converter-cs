@@ -19,12 +19,12 @@ public class ConverterOption
 
     public static ConverterOption? FromJson(string text)
     {
-        return (ConverterOption?)JsonSerializer.Deserialize(text,typeof(ConverterOption), SourceGenerationContext.Default);
+        return (ConverterOption?)JsonSerializer.Deserialize(text, typeof(ConverterOption), SourceGenerationContext.Default);
     }
 
     public string ToJson()
     {
-        return JsonSerializer.Serialize(this,typeof(ConverterOption), SourceGenerationContext.Default);
+        return JsonSerializer.Serialize(this, typeof(ConverterOption), SourceGenerationContext.Default);
     }
 }
 
