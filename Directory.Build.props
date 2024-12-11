@@ -23,6 +23,8 @@
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <PredefinedCulturesOnly>false</PredefinedCulturesOnly>
 
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <DefineConstants Condition=" '$(DesignMode)' != '' ">$(DefineConstants);DESIGN</DefineConstants>

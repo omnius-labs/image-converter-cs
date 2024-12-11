@@ -1,55 +1,44 @@
-using System.Globalization;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using ImageMagick;
 
 namespace ImageConverter.Internal;
 
+[JsonSourceGenerationOptions(PropertyNamingPolicy = JsonKnownNamingPolicy.SnakeCaseLower)]
+[JsonSerializable(typeof(ConverterOption))]
+internal partial class SourceGenerationContext : JsonSerializerContext
+{
+}
+
 public class ConverterOption
 {
-    public required InputOption Input { get; init; }
-    public required OutputOption Output { get; init; }
+    public required string InPath { get; init; }
+    public required string InType { get; init; }
+    public required string OutPath { get; init; }
+    public required string OutType { get; init; }
 
     public static ConverterOption? FromJson(string text)
     {
-        var options = new JsonSerializerOptions()
-        {
-            PropertyNamingPolicy = new SnakeCaseJsonNamingPolicy()
-        };
-        return JsonSerializer.Deserialize<ConverterOption>(text, options);
+        return (ConverterOption?)JsonSerializer.Deserialize(text,typeof(ConverterOption), SourceGenerationContext.Default);
     }
 
     public string ToJson()
     {
-        var options = new JsonSerializerOptions()
-        {
-            PropertyNamingPolicy = new SnakeCaseJsonNamingPolicy()
-        };
-        return JsonSerializer.Serialize(this, options);
+        return JsonSerializer.Serialize(this,typeof(ConverterOption), SourceGenerationContext.Default);
     }
-}
-
-public class InputOption
-{
-    public required string? Format { get; init; }
-    public required string FilePath { get; init; }
-}
-public class OutputOption
-{
-    public required string Format { get; init; }
-    public required string FilePath { get; init; }
 }
 
 public static class Converter
 {
     public static void Run(ConverterOption option)
     {
-        var inputFormat = GetMagickFormat(option.Input.Format);
-        var outputFormat = GetMagickFormat(option.Output.Format);
+        var inputFormat = GetMagickFormat(option.InType);
+        var outputFormat = GetMagickFormat(option.OutType);
 
         if (outputFormat == MagickFormat.Unknown) throw new Exception("output format is unknown");
 
-        using var m = new MagickImage(option.Input.FilePath, inputFormat);
-        m.Write(option.Output.FilePath, outputFormat);
+        using var m = new MagickImage(option.InPath, inputFormat);
+        m.Write(option.OutPath, outputFormat);
     }
 
     private static void InitializeImageMagick()

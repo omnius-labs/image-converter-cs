@@ -20,7 +20,7 @@ public static class Program
 
             Converter.Run(option);
 
-            Console.WriteLine($"Converted \"{option.Input.FilePath}\" to \"{option.Output.FilePath}\"");
+            Console.WriteLine($"Converted \"{option.InPath}\" to \"{option.OutPath}\"");
 
             return 0;
         }
