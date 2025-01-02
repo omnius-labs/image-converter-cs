@@ -30,18 +30,7 @@ public class ConverterOption
 
 public static class Converter
 {
-    public static void Run(ConverterOption option)
-    {
-        var inputFormat = GetMagickFormat(option.InType);
-        var outputFormat = GetMagickFormat(option.OutType);
-
-        if (outputFormat == MagickFormat.Unknown) throw new Exception("output format is unknown");
-
-        using var m = new MagickImage(option.InPath, inputFormat);
-        m.Write(option.OutPath, outputFormat);
-    }
-
-    private static void InitializeImageMagick()
+    static Converter()
     {
         var configFiles = ImageMagick.Configuration.ConfigurationFiles.Default;
         configFiles.Policy.Data = @"
@@ -52,6 +41,17 @@ public static class Converter
   <policy domain=""coder"" rights=""read|write"" pattern=""{GIF,JPEG,PNG,WEBP,BMP,HEIF,HEIC,AVIF,SVG}"" />
 </policymap>";
         MagickNET.Initialize(configFiles);
+    }
+
+    public static void Run(ConverterOption option)
+    {
+        var inputFormat = GetMagickFormat(option.InType);
+        var outputFormat = GetMagickFormat(option.OutType);
+
+        if (outputFormat == MagickFormat.Unknown) throw new Exception("output format is unknown");
+
+        using var m = new MagickImage(option.InPath, inputFormat);
+        m.Write(option.OutPath, outputFormat);
     }
 
     private static MagickFormat GetMagickFormat(string? value)

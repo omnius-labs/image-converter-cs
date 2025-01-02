@@ -3,7 +3,11 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="14.2.0" />
+    <PackageVersion Include="Magick.NET-Q16-AnyCPU" Version="14.3.0" />
     <PackageVersion Include="GitInfo" Version="3.5.0" />
+    <PackageVersion Include="ThisAssembly.Constants" Version="2.0.10">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageVersion>
   </ItemGroup>
 </Project>

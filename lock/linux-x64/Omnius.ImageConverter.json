@@ -13,11 +13,11 @@
       },
       "Magick.NET-Q16-AnyCPU": {
         "type": "Direct",
-        "requested": "[14.2.0, )",
-        "resolved": "14.2.0",
-        "contentHash": "dlC3F/jpJ7SoUYCPrNBny0NnBBqj6M0jstEDHmyh83zZHH9vSdOcRk3f/3E7Qdd4vRD4DAPfR+d6e6chNyRjiA==",
+        "requested": "[14.3.0, )",
+        "resolved": "14.3.0",
+        "contentHash": "DGa3ZyqIjT4nbA7gHM0iE2DC5Rn74NXGlmEDaNcr0T30A7JPPl9S1/thrLAmBPu1cYCpTQYq6ONbFJpw/Deh/Q==",
         "dependencies": {
-          "Magick.NET.Core": "14.2.0"
+          "Magick.NET.Core": "14.3.0"
         }
       },
       "Microsoft.NET.ILLink.Tasks": {
@@ -26,10 +26,20 @@
         "resolved": "8.0.10",
         "contentHash": "xT8jYjlroY7SLbGtoV9vUTVW/TPgodL4Egc31a444Xe0TMytLZ3UlKQ0kxMZsy/CrWsFB6wtKnSG1SsXcWreew=="
       },
+      "ThisAssembly.Constants": {
+        "type": "Direct",
+        "requested": "[2.0.10, )",
+        "resolved": "2.0.10",
+        "contentHash": "FQGztsF8h8nI5wX4R25XS/gXTknMsUcKeSDfQ828WTs+gtoXoQsSDDI5ENZQS2SP61hKfSZokPCBzyQhOS7wow==",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Threading.Tasks.Extensions": "4.5.4"
+        }
+      },
       "Magick.NET.Core": {
         "type": "Transitive",
-        "resolved": "14.2.0",
-        "contentHash": "1F0vtPJwmoVg9tvi59VEy6KdmpUXbzKYJOH+TL37DT6kXfqj4iFtOMqD7CXC3G6z2zMgFeF5LX9SSApn8Jhhqg=="
+        "resolved": "14.3.0",
+        "contentHash": "dQfqjiaEEnSFUELSvZbD76XGwgT98MBTRZ9l68qBLFK3BYtIaYO2MAIYgoD8VPSGRgNLSbKRMGcFldZ/O1XEFg=="
       },
       "Microsoft.CSharp": {
         "type": "Transitive",
@@ -40,25 +50,16 @@
         "type": "Transitive",
         "resolved": "4.5.4",
         "contentHash": "zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg=="
-      },
-      "ThisAssembly.Constants": {
-        "type": "Transitive",
-        "resolved": "2.0.6",
-        "contentHash": "XF1RWxkEx+xvSRZOpkLF0rrclMsjKYkO+j7UoCk+ebSzKcxoIye7Na4HvkmIJogNoB+vZqSz7df5McxgzZHtbg==",
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "System.Threading.Tasks.Extensions": "4.5.4"
-        }
       }
     },
     "net8.0/linux-x64": {
       "Magick.NET-Q16-AnyCPU": {
         "type": "Direct",
-        "requested": "[14.2.0, )",
-        "resolved": "14.2.0",
-        "contentHash": "dlC3F/jpJ7SoUYCPrNBny0NnBBqj6M0jstEDHmyh83zZHH9vSdOcRk3f/3E7Qdd4vRD4DAPfR+d6e6chNyRjiA==",
+        "requested": "[14.3.0, )",
+        "resolved": "14.3.0",
+        "contentHash": "DGa3ZyqIjT4nbA7gHM0iE2DC5Rn74NXGlmEDaNcr0T30A7JPPl9S1/thrLAmBPu1cYCpTQYq6ONbFJpw/Deh/Q==",
         "dependencies": {
-          "Magick.NET.Core": "14.2.0"
+          "Magick.NET.Core": "14.3.0"
         }
       }
     }

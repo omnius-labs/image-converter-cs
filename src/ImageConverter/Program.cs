@@ -12,13 +12,21 @@ public static class Program
             var line = Console.ReadLine();
             if (line is null) throw new Exception("stdin is null");
 
-            var text = Base64StringToUtf8String(line);
-            if (text is null) throw new Exception("failed to base64 decoding");
+            var json = Base64StringToUtf8String(line);
+            if (json is null) throw new Exception("failed to base64 decoding");
 
-            var option = ConverterOption.FromJson(text);
+            var option = ConverterOption.FromJson(json);
             if (option is null) throw new Exception("failed to json deserializing");
 
-            Converter.Run(option);
+            try
+            {
+                Converter.Run(option);
+            }
+            catch (Exception)
+            {
+                Console.Error.WriteLine($"Option: \"{json}\"");
+                throw;
+            }
 
             Console.WriteLine($"Converted \"{option.InPath}\" to \"{option.OutPath}\"");
 
